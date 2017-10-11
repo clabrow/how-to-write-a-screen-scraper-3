@@ -34,15 +34,7 @@ def scrape_and_look_for_next_link(url):
     root = lxml.html.fromstring(html)
     # scrape the table and store it in data record set up in previous function
     scrape_table(root)
-    # ? Is "a.next" a string from the table?
-    next_link = root.cssselect("a.next")
-    print next_link
-    if next_link:
-        # gets the contents of the attribute href 
-        next_url = urlparse.urljoin(base_url, next_link[0].attrib.get('href'))
-        print next_url
-        # I guess this moves on to the next link in the url and keeps going until it doesn't find any more
-        scrape_and_look_for_next_link(next_url)
+   
 
 # ---------------------------------------------------------------------------
 # START HERE: define your starting URL - then 

@@ -16,8 +16,8 @@ def scrape_table(root): # root variable defined in scrape_and_look_for_next_link
         record = {}
         table_cells = row.cssselect("td") # extract cell in the table as you loop through it
         if table_cells: # if there are any cells
-            record['Racecourse'] = table_cells[0].text # put the text between each tag in a variable called record, unique key is artist
-            record['Address and Phone Number'] = table_cells[1].text
+            record['Racecourse'] = table_cells[0].text_content() # put the text between each tag in a variable called record, unique key is artist
+            record['Address and Phone Number'] = table_cells[1].text_content()
             # Print out the data we've gathered
             print record, '------------'
             # Finally, save the record to the datastore - 'Artist' is our unique key

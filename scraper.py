@@ -10,7 +10,7 @@ import lxml.html
 
 # scrape_table function: gets passed an individual page to scrape
 def scrape_table(root): # root variable defined in scrape_and_look_for_next_link: parses xml from url
-    rows = root.cssselect("tr")  # selects all <tr> blocks
+    rows = root.cssselect("table")  # selects all <table> blocks
     for row in rows:
         # Set up our data record - we'll need it later
         record = {}

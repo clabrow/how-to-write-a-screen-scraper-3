@@ -29,7 +29,7 @@ def scrape_and_look_for_next_link(url):
     # scrape that url
     html = scraperwiki.scrape(url)
     # print out the contents
-    print html
+    # print html
     # parses the xml from the url into an element?
     root = lxml.html.fromstring(html)
     # scrape the table and store it in data record set up in previous function
